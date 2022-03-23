@@ -1,0 +1,24 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.person-image {
+  padding: 20px;
+  width: 128px;
+  height: 128px;
+}
+
+.location {
+  padding: 10px;
+  display: flex;
+  align-content: flex-start;
+}
