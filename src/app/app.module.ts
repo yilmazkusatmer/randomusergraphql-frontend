@@ -19,6 +19,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {ApolloModule} from "apollo-angular";
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {MatInputModule} from "@angular/material/input";
     LayoutModule,
     GraphqlModule,
     HttpClientModule,
-    ApolloModule
+    ApolloModule,
+    MatSelectModule
 
   ],
   providers: [GraphqlService],

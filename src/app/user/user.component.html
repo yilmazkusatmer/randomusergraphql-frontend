@@ -1,11 +1,20 @@
 <div class="grid-container">
-  <div>
-    <h1 class="mat-h1">Users
-    </h1>
+  <h1 class="mat-h1">Users
+  </h1>
+  <div class="form-elements">
     <mat-form-field>
       <mat-label>limit</mat-label>
       <input matInput [(ngModel)]="limit" type="number">
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>gender</mat-label>
+      <mat-select [(value)]="selectedGender">
+        <mat-option value="female,male">female & male</mat-option>
+        <mat-option value="female">female</mat-option>
+        <mat-option value="male">male</mat-option>
+      </mat-select>
+    </mat-form-field>
+
     <button mat-button (click)="fetchUsers()">NEW</button>
   </div>
   <mat-grid-list cols="5" rowHeight="125">

@@ -10,8 +10,8 @@ import {Result} from "../domain/Result";
 export class GraphqlService {
 
   private users = gql`
-    query getUsers($limit: Int){
-      root(limit: $limit) {
+    query getUsers($limit: Int, $gender: String){
+      root(limit: $limit, gender: $gender) {
         results {
           name {
             first
@@ -31,11 +31,12 @@ export class GraphqlService {
 
   constructor(private apollo: Apollo) { }
 
-  getUsers(limit: number): Observable<any> {
+  getUsers(limit: number, gender: string): Observable<any> {
     return this.apollo.watchQuery({
       query: this.users,
       variables:{
-        limit: limit
+        limit: limit,
+        gender: gender
       },
       fetchPolicy: "no-cache"
     }).valueChanges;

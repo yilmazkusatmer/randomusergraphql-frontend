@@ -10,7 +10,8 @@ import {Result} from "../domain/Result";
 })
 export class UserComponent implements OnInit {
   results: Result[] = [];
-  limit: number=5;
+  limit: number = 5;
+  selectedGender: string = 'female,male';
 
   constructor(private graphqlService: GraphqlService) {
   }
@@ -21,10 +22,9 @@ export class UserComponent implements OnInit {
 
   fetchUsers() {
     this.graphqlService
-      .getUsers(this.limit)
+      .getUsers(this.limit, this.selectedGender)
       .pipe(map((val) => {
         this.results = val.data.root.results;
-        console.log(this.results);
       }))
       .subscribe();
   }
