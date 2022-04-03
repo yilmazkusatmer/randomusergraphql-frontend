@@ -18,8 +18,8 @@
     <button mat-button (click)="fetchUsers()">NEW</button>
   </div>
   <mat-grid-list cols="5" rowHeight="125">
-    <mat-grid-tile *ngFor="let user of results " [colspan]="1" [rowspan]="2">
-      <mat-card class="dashboard-card">
+    <mat-grid-tile *ngFor="let user of users" [colspan]="1" [rowspan]="2">
+      <mat-card class="dashboard-card" >
         <mat-card-header>
           <mat-card-title>
             {{ user.name.first }} {{ user.name.last }}

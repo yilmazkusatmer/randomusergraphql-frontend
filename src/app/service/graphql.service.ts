@@ -1,8 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Apollo, gql} from "apollo-angular";
 import {Observable} from "rxjs";
-import {DataObject} from "../domain/DataObject";
-import {Result} from "../domain/Result";
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +8,9 @@ import {Result} from "../domain/Result";
 export class GraphqlService {
 
   private users = gql`
-    query getUsers($limit: Int, $gender: String){
+    query GetUsers($limit: Int, $gender: String){
       root(limit: $limit, gender: $gender) {
-        results {
+        users {
           name {
             first
             last
@@ -29,12 +27,13 @@ export class GraphqlService {
     }
   `;
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo) {
+  }
 
   getUsers(limit: number, gender: string): Observable<any> {
     return this.apollo.watchQuery({
       query: this.users,
-      variables:{
+      variables: {
         limit: limit,
         gender: gender
       },

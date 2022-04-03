@@ -1,5 +1,5 @@
 import {Data} from "./Data";
 
-export interface DataObject {
+export interface DataWrapper {
   data: Data;
 }

@@ -1,5 +1,5 @@
-import {Result} from "./Result";
+import {User} from "./User";
 
 export interface Root {
-  results: Result[];
+  users: User[];
 }
